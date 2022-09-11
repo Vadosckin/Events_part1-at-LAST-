@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+    <button id="testBtn">Test Button</button>
+    <script>
+        /*
+        Задание:
+        Добавьте для кнопки testBtn обработчик на событие click.
+        Обработчик должен выводить на экран сообщение Hello world.
+        Добавьте обработчик тремя разными способами.
+        */
+    
+    //First try (событие click активируется нажатием левой клавиши мыши):
+
+      /*  let button1 = document.querySelector(`#testBtn`);
+
+       button1.onclick = showMessage;
+       
+       function showMessage() {
+        alert("Hello world");
+       }; */
+    
+    //Second try (событие contextmenu активируется нажатием правой клавишей мыши):
+
+    let button2 = document.querySelector(`#testBtn`);
+
+    button2.oncontextmenu = showMessage1;
+
+    function showMessage1() {
+        alert('Hello world');
+    };
+
+    //Mistake - добавление скобок при указании функции в событии
+
+   /*  let button3 = document.querySelector(`#testBtn`);
+
+    button3.onmouseover = showMessage1();
+
+    function showMessage1() {
+        alert('Hello world');
+    }; */
+
+    //Third try(событие mouseover активируется при наведении курсора мыши на нужный обьект):
+
+   /*  let button3 = document.querySelector(`#testBtn`);
+
+    button3.onmouseover = showMessage2;
+
+    function showMessage2() {
+        alert('Hello world');
+    }; */
+
+    //Fourth try(событие keydown активируется при нажатой клавиши на клавиатуре, 
+    // а keyup в свою очередь при отпущенной клавиши на клавиатуре):
+
+    let button4 = document.querySelector(`#testBtn`);
+
+    button4.onkeydown = showMessage3;
+
+    function showMessage3() {
+        alert('Hello world');
+    };
+
+    //Fifth try (использую функцию addEventListener, 
+    //которая использует два параметра для установки события (первый - это имя события без приставки on; второй - функция обработчик)):
+
+    let button5 = document.querySelector("#testBtn");
+
+    button5.addEventListener("click", function () {
+        alert('Hello world');
+    });
+
+    //Оставшиеся событыя:
+    //Mousedown - активирует событие при зажатой клавиши мыши;
+    //Mouseup - активирует событие при отпущенной клавиши мыши;
+    //Mouseout - активирует событие когда курсор находится вне зоны обьекта;
+    //Mousemove - активирует событие при перемещени;
+    //Submit - активирует событие когда пользователь отправил форму (нажал на кнопку submit для form);
+    </script>
+</body>
+
+</html>
